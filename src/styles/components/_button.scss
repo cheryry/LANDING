@@ -1,0 +1,20 @@
+@import "src/styles/variables/colors";
+
+.button {
+  width: auto;
+  white-space: nowrap;
+  border-radius: 2px;
+  color: $white;
+  font-weight: bold;
+  border: none;
+  margin: 0;
+
+  &.fluid {
+    background: $blue-bold;
+  }
+
+  &.clear {
+    background: none;
+    border: 2px solid $blue-bold;
+  }
+}
