@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
+  public currentDate: Date;
+
+  constructor() {
+    this.currentDate = new Date();
+  }
 
   ngOnInit() {
   }

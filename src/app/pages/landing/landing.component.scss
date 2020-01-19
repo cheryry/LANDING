@@ -7,6 +7,7 @@ header {
   height: auto;
   padding: 10px 0;
   width: 100%;
+  z-index: 1000;
 
   .header {
 
@@ -128,6 +129,14 @@ main {
 
           div {
 
+            &:first-child {
+              padding-left: 0;
+            }
+
+            &:last-child {
+              padding-right: 0;
+            }
+
             h3 {
               margin-top: 15px;
               margin-bottom: 5px;
@@ -173,9 +182,79 @@ main {
   }
 
   .prices {
-
+    background-image: url(src/assets/images/pricing-background.svg);
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
+}
+
+footer {
+  background: $lilac-light;
+
+  .footer {
+    padding: 60px 0 30px;
+
+    .site-info {
+      padding-bottom: 35px;
+      border-bottom: 1px solid $gray-lighter;
+
+      .date {
+        color: $gray-lighter;
+        font-weight: bold;
+        font-size: 0.9rem;
+      }
+
+      .logo {
+
+      }
+
+      .code {
+        background: $blue-bolder;
+        border-radius: 2px;
+        color: $white;
+      }
+
+    }
+
+    .links {
+      margin-top: 20px;
+
+      .navigate-links {
+        padding-left: 0;
+
+        ul {
+
+          li {
+
+            a {
+              color: $blue-lighter;
+              text-decoration: none;
+            }
+          }
+        }
+
+      }
+
+      .social-links {
+        padding-right: 0;
+
+      }
+
+      .navigate-links,
+      .social-links {
+        ul {
+          padding: 0;
+          margin: 0;
+
+          li {
+            list-style-type: none;
+          }
+
+        }
+      }
+    }
+  }
 }
 
 
