@@ -1,48 +1,122 @@
 @import "src/styles/variables/colors";
+@import "src/styles/variables/resolutions";
 
 header {
   position: fixed;
   top: 0;
   height: auto;
   padding: 10px 0;
+  width: 100%;
 
-  .links {
+  .header {
 
-    .link-list {
-      padding: 0;
-      margin: 0;
+    .header-wrapper {
 
-      .link {
-        list-style-type: none;
+      .links {
 
-        a {
-          color: $blue-light;
-          text-decoration: none;
+        .link-list {
+          padding: 0;
+          margin: 0;
+
+          .link {
+            list-style-type: none;
+
+            &:not(:last-child) {
+              margin-right: 13%;
+            }
+
+            a {
+              color: $blue-light;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+
+      .logo {
+
+        img {
+          max-width: 80px;
+          max-height: 40px;
+          min-width: 50px;
+          min-height: 30px;
+        }
+      }
+
+      .actions {
+
+        .buy-button {
+          font-size: 0.9rem;
+        }
+
+        .menu-trigger {
+          padding: 0;
+          border-radius: 4px;
         }
       }
     }
   }
-
-  .logo {
-
-    img {
-      max-width: 80px;
-      max-height: 40px;
-      min-width: 50px;
-      min-height: 30px;
-    }
-  }
-
-  .actions {
-
-    .buy-button {
-      padding: 5px 15%;
-      font-size: 0.9rem;
-    }
-
-    .menu-trigger {
-      padding: 0;
-      border-radius: 4px;
-    }
-  }
 }
+
+main {
+
+  .introduce {
+    background-image: url(src/assets/images/introduce-background.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: top;
+    background-position-x: 293px;
+    min-height: 100vh;
+
+    section {
+
+      .content-wrapper {
+
+        .content {
+          margin-top: 30%;
+
+          .introduce-text {
+            margin-bottom: 20px;
+            color: $blue-bold;
+            font-size: 3.1rem;
+          }
+
+          .description {
+            margin-bottom: 70px;
+            color: $blue-light;
+            font-size: 1.1rem;
+          }
+
+          .actions {
+
+            .purchase {
+
+            }
+
+            .learn-more {
+
+            }
+          }
+        }
+
+      }
+    }
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
