@@ -63,9 +63,9 @@ main {
   .introduce {
     background-image: url(src/assets/images/introduce-background.svg);
     background-repeat: no-repeat;
-    background-size: contain;
-    background-position-y: top;
-    background-position-x: 293px;
+    background-size: 70% 100%;
+    background-position-y: -30px;
+    background-position-x: 558px;
     min-height: 100vh;
 
     section {
@@ -104,6 +104,77 @@ main {
   }
 
 
+  .about {
+
+    .first-advantage {
+      padding-top: 50px;
+      padding-bottom: 50px;
+
+      .advantage {
+
+        .advantage-text {
+          color: $blue-bold;
+          font-size: 2.8rem;
+          margin-bottom: 15px;
+        }
+
+        .advantage-description {
+          color: $blue-light;
+          font-size: 1rem;
+          margin-bottom: 80px;
+        }
+
+        .advantages-list {
+
+          div {
+
+            h3 {
+              margin-top: 15px;
+              margin-bottom: 5px;
+              font-size: 1rem;
+            }
+
+            p {
+              margin: 0;
+              color: $gray-light;
+              font-size: 0.8rem;
+            }
+          }
+
+        }
+      }
+
+      .advantage-image {
+        margin-top: 50px;
+
+        img {
+          width: 80%;
+        }
+      }
+    }
+  }
+
+  .second-advantage,
+  .third-advantage,
+  .fourth-advantage {
+    padding-top: 70px;
+    padding-bottom: 70px;
+
+    h1 {
+      font-size: 2.3rem;
+      color: $blue-bold;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: $blue-light;
+    }
+  }
+
+  .prices {
+
+  }
 
 }
 
