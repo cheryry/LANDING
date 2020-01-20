@@ -1,9 +1,10 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-burger',
   templateUrl: './burger.component.html',
-  styleUrls: ['./burger.component.scss']
+  styleUrls: ['./burger.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BurgerComponent implements OnInit {
 
