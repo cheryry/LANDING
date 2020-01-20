@@ -102,6 +102,18 @@ main {
 
       }
     }
+
+    @media all and (max-width: 576px){
+      min-height: 50vh;
+    }
+
+    @media all and (min-width: 720px){
+      min-height: 75vh;
+    }
+
+    @media all and (min-width: 992px){
+      min-height: 100vh;
+    }
   }
 
 
@@ -166,8 +178,11 @@ main {
   .second-advantage,
   .third-advantage,
   .fourth-advantage {
-    padding-top: 70px;
-    padding-bottom: 70px;
+
+    &:nth-child(2n) {
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
 
     h1 {
       font-size: 2.3rem;
