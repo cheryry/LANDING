@@ -121,6 +121,7 @@ main {
 
     .main-advantage {
       padding-top: 50px;
+      padding-bottom: 50px;
 
       .advantage {
 
@@ -175,11 +176,8 @@ main {
   }
 
   .additions-advantage {
-
-    &:nth-child(2n) {
-      padding-top: 70px;
-      padding-bottom: 70px;
-    }
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 
     h1 {
       font-size: 2.3rem;
@@ -190,6 +188,11 @@ main {
     p {
       font-size: 1rem;
       color: $blue-light;
+    }
+
+    @media all and (max-width: 576px){
+      padding-top: 3rem;
+      padding-bottom: 3rem;
     }
   }
 
