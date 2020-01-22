@@ -1,46 +1,42 @@
-<header #header>
-  <div class="container header">
-    <div class="header-wrapper row align-items-center justify-content-between">
-      <nav class="links d-sm-block d-none col-5">
-        <ul class="link-list d-flex">
-          <li class="link">
-            <a href="">
-              Home
-            </a>
-          </li>
-          <li class="link">
-            <a href="">
-              About
-            </a>
-          </li>
-          <li class="link">
-            <a href="">
-              Contact
-            </a>
-          </li>
-        </ul>
-      </nav>
+<header class="header" #header>
+  <div class="container d-flex header-wrapper align-items-center justify-content-between">
+    <nav class="links d-sm-block d-none col-5">
+      <ul class="link-list d-flex">
+        <li class="link-item">
+          <a class="link" href="">
+            Home
+          </a>
+        </li>
+        <li class="link-item">
+          <a class="link" href="">
+            About
+          </a>
+        </li>
+        <li class="link-item">
+          <a class="link" href="">
+            Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
 
-      <a href="" class="logo d-flex col-4">
-        <img src="./assets/icons/logo.svg" alt="logo">
-      </a>
+    <a href="" class="logo d-flex col-4">
+      <img src="./assets/icons/logo.svg" alt="logo">
+    </a>
 
-      <div class="actions d-flex justify-content-center col-3">
-        <button class="buy-button button fluid d-sm-block d-none pr-5 pl-5 pt-1 pb-1">
-          Buy Now
-        </button>
-
-        <app-burger class="menu-trigger d-sm-none d-flex justify-content-end"></app-burger>
-      </div>
+    <div class="actions d-flex justify-md-content-center justify-content-end col-3">
+      <button class="buy-button button fluid d-sm-block d-none pr-5 pl-5 pt-1 pb-1">
+        Buy Now
+      </button>
+      <app-burger class="menu-trigger d-sm-none d-flex"></app-burger>
     </div>
   </div>
 </header>
 
-<main>
+<main class="main-content">
   <article class="introduce">
-    <section class="container">
+    <section class="container introduce-part">
       <div class="row content-wrapper">
-
         <div class="col-md-8 col-lg-6 content">
           <h1 class="introduce-text text-center text-sm-left">
             Introduce Your Product Quickly & Effectively
@@ -51,21 +47,20 @@
             ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
           </p>
           <div class="actions d-flex flex-column flex-sm-row">
-            <button class="button fluid purchase mr-sm-5 mb-sm-0 mb-3 pr-5 pl-5 pt-2 pb-2">
+            <button class="button fluid purchase mr-sm-5 mb-sm-0 mb-3 pr-5 pl-5 pt-3 pt-sm-2 pb-3 pb-sm-2">
               Purchase UI Kit
             </button>
-            <button class="button clear learn-more pr-5 pl-5 pt-2 pb-2">
+            <button class="button clear learn-more pr-5 pl-5 pt-3 pt-sm-2 pb-3 pb-sm-2">
               Learn More
             </button>
           </div>
         </div>
-
       </div>
     </section>
   </article>
 
   <article class="about container">
-    <section class="row align-items-center main-advantage">
+    <section class="row align-items-center main-advantage justify-content-center">
       <div class="col-md-6 col-12 advantage">
         <h1 class="advantage-text text-center text-sm-left">
           Light, Fast & Powerful
@@ -75,42 +70,41 @@
           sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies
           nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
         </p>
-        <div class="advantages-list d-flex">
-          <div class="col-6">
+        <ul class="advantages-list list-normalize d-flex">
+          <li class="col-6 advantage-item">
             <img src="./assets/icons/first-advantage.svg" alt="advantage">
-            <h3>
+            <h3 class="item-title">
+              Title Goes Here
+            </h3>
+            <p class="item-description">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+            </p>
+          </li>
+          <li class="col-6 advantage-item">
+            <img src="./assets/icons/first-advantage.svg" alt="advantage">
+            <h3 class="item-title">
               Title Goes Here
             </h3>
             <p>
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
             </p>
-          </div>
-
-          <div class="col-6">
-            <img src="./assets/icons/first-advantage.svg" alt="advantage">
-            <h3>
-              Title Goes Here
-            </h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-            </p>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
-      <div class="col-md-6 col-12 advantage-image justify-content-center d-flex">
-        <img src="./assets/images/first-advantage.svg" alt="advantage">
+      <div class="col-md-6 col-10 pt-5 pt-md-0 advantage-image-container justify-content-center d-flex">
+        <img src="./assets/images/first-advantage.svg" class="advantage-image" alt="advantage">
       </div>
     </section>
 
     <section class="row additions-advantage align-items-center justify-content-around flex-md-row flex-column-reverse">
-      <div class="col-md-5 col-12 advantage-image">
+      <div class="col-md-5 col-10 pt-5 pt-md-0 advantage-image">
         <img src="./assets/images/second-advantage.svg" alt="advantage">
       </div>
       <div class="col-md-5 col-12 advantage">
-        <h1 class="text-center text-sm-left">
+        <h1 class="advantage-title text-center text-sm-left">
           Light, Fast & Powerful
         </h1>
-        <p>
+        <p class="advantage-description">
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
           sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies
           nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
@@ -119,11 +113,11 @@
     </section>
 
     <section class="row additions-advantage align-items-center justify-content-around flex-md-row flex-column-reverse">
-      <div class="col-md-5 col-12 advantage-image">
+      <div class="col-md-5 col-10 pt-5 pt-md-0 advantage-image">
         <img src="./assets/images/third-advantage.svg" alt="advantage">
       </div>
       <div class="col-md-5 col-12 advantage">
-        <h1 class="text-center text-sm-left">
+        <h1 class="advantage-title text-center text-sm-left">
           Light, Fast & Powerful
         </h1>
         <p>
@@ -135,11 +129,11 @@
     </section>
 
     <section class="row additions-advantage align-items-center justify-content-around flex-md-row flex-column-reverse">
-      <div class="col-md-5 col-12 advantage-image">
+      <div class="col-md-5 col-10 pt-5 pt-md-0 advantage-image">
         <img src="./assets/images/fourth-advantage.svg" alt="advantage">
       </div>
       <div class="col-md-5 col-12 advantage">
-        <h1 class="text-center text-sm-left">
+        <h1 class="advantage-title text-center text-sm-left">
           Light, Fast & Powerful
         </h1>
         <p>
@@ -210,8 +204,8 @@
   </article>
 </main>
 
-<footer>
-  <div class="container footer">
+<footer class="footer">
+  <div class="container footer-wrapper">
     <div class="row site-info justify-content-between">
       <div class="date col-4 d-flex align-items-center">
         ©{{ currentDate?.getFullYear() }} UIX
@@ -229,19 +223,19 @@
     </div>
     <div class="row links justify-content-between">
       <nav class="navigate-links col-6 col-sm-5 col-md-3">
-        <ul class="d-flex list-normalize justify-content-between align-items-center">
-          <li>
-            <a href="">
+        <ul class="d-flex link-list list-normalize justify-content-between align-items-center">
+          <li class="navigate-item">
+            <a class="navigate-link" href="">
               Home
             </a>
           </li>
-          <li>
-            <a href="">
+          <li class="navigate-item">
+            <a class="navigate-link" href="">
               About
             </a>
           </li>
-          <li>
-            <a href="">
+          <li class="navigate-item">
+            <a class="navigate-link" href="">
               Contact
             </a>
           </li>
@@ -249,30 +243,30 @@
       </nav>
 
       <nav class="social-links col-6 col-sm-5 col-md-3">
-        <ul class="d-flex list-normalize justify-content-between align-items-center">
-          <li>
-            <a href="">
-              <img src="./assets/icons/facebook.svg" alt="facebook">
+        <ul class="socials-list d-flex list-normalize justify-content-between align-items-center">
+          <li class="social-item">
+            <a class="social-link" href="">
+              <img src="./assets/icons/facebook.svg" class="social-image" alt="facebook">
             </a>
           </li>
-          <li>
-            <a href="">
-              <img src="./assets/icons/linkidin.svg" alt="linkidin">
+          <li class="social-item">
+            <a class="social-link" href="">
+              <img src="./assets/icons/linkidin.svg" class="social-image" alt="linkidin">
             </a>
           </li>
-          <li>
-            <a href="">
-              <img src="./assets/icons/twitter.svg" alt="twitter">
+          <li class="social-item">
+            <a class="social-link" href="">
+              <img src="./assets/icons/twitter.svg" class="social-image" alt="twitter">
             </a>
           </li>
-          <li>
-            <a href="">
-              <img src="./assets/icons/yt.svg" alt="youtube">
+          <li class="social-item">
+            <a class="social-link" href="">
+              <img src="./assets/icons/yt.svg" class="social-image" alt="youtube">
             </a>
           </li>
-          <li>
-            <a href="">
-              <img src="./assets/icons/instagram.svg" alt="instagram">
+          <li class="social-item">
+            <a class="social-link" href="">
+              <img src="./assets/icons/instagram.svg" class="social-image" alt="instagram">
             </a>
           </li>
         </ul>

@@ -1,7 +1,7 @@
 @import "src/styles/variables/colors";
 @import "src/styles/variables/resolutions";
 
-header {
+.header {
   position: fixed;
   top: 0;
   height: auto;
@@ -10,51 +10,48 @@ header {
   z-index: 1000;
   transition: background-color, box-shadow .2s ease;
 
-  .header {
+  .header-wrapper {
 
-    .header-wrapper {
+    .links {
 
-      .links {
+      .link-list {
+        padding: 0;
+        margin: 0;
 
-        .link-list {
-          padding: 0;
-          margin: 0;
+        .link-item {
+          list-style-type: none;
+
+          &:not(:last-child) {
+            margin-right: 13%;
+          }
 
           .link {
-            list-style-type: none;
-
-            &:not(:last-child) {
-              margin-right: 13%;
-            }
-
-            a {
-              color: $blue-light;
-              text-decoration: none;
-            }
+            color: $blue-light;
+            text-decoration: none;
           }
         }
       }
+    }
 
-      .logo {
+    .logo {
 
-        img {
-          max-width: 80px;
-          max-height: 40px;
-          min-width: 50px;
-          min-height: 30px;
-        }
+      img {
+        max-width: 80px;
+        max-height: 40px;
+        min-width: 50px;
+        min-height: 30px;
+      }
+    }
+
+    .actions {
+
+      .buy-button {
+        font-size: 0.9rem;
       }
 
-      .actions {
-
-        .buy-button {
-          font-size: 0.9rem;
-        }
-
-        .menu-trigger {
-          padding: 0;
-          border-radius: 4px;
-        }
+      .menu-trigger {
+        padding: 0;
+        border-radius: 4px;
       }
     }
   }
@@ -65,7 +62,7 @@ header {
   }
 }
 
-main {
+.main-content {
 
   .introduce {
     background-image: url(src/assets/images/introduce-background.svg);
@@ -75,14 +72,15 @@ main {
     background-position-x: 560px;
     min-height: 100vh;
 
-    section {
+    .introduce-part {
 
       .content-wrapper {
 
         .content {
-          margin-top: 30%;
+          margin-top: 18.93rem;
 
           .introduce-text {
+            margin-top: 0;
             margin-bottom: 20px;
             color: $blue-bold;
             font-size: 3.1rem;
@@ -108,26 +106,14 @@ main {
 
       }
     }
-
-    @media all and (max-width: $small) {
-      min-height: 50vh;
-    }
-
-    @media all and (min-width: $medium) {
-      min-height: 75vh;
-    }
-
-    @media all and (min-width: $large) {
-      min-height: 100vh;
-    }
   }
 
 
   .about {
 
     .main-advantage {
-      padding-top: 50px;
-      padding-bottom: 50px;
+      padding-top: 10rem;
+      padding-bottom: 6.75rem;
 
       .advantage {
 
@@ -135,6 +121,7 @@ main {
           color: $blue-bold;
           font-size: 2.8rem;
           margin-bottom: 15px;
+          margin-top: 0;
         }
 
         .advantage-description {
@@ -145,7 +132,7 @@ main {
 
         .advantages-list {
 
-          div {
+          .advantage-item {
 
             &:first-child {
               padding-left: 0;
@@ -155,13 +142,13 @@ main {
               padding-right: 0;
             }
 
-            h3 {
+            .item-title {
               margin-top: 15px;
               margin-bottom: 5px;
               font-size: 1rem;
             }
 
-            p {
+            .item-description {
               margin: 0;
               color: $gray-light;
               font-size: 0.8rem;
@@ -171,10 +158,9 @@ main {
         }
       }
 
-      .advantage-image {
-        margin-top: 50px;
+      .advantage-image-container {
 
-        img {
+        .advantage-image {
           width: 80%;
         }
       }
@@ -182,35 +168,30 @@ main {
   }
 
   .additions-advantage {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 7.6rem;
+    padding-bottom: 8.1rem;
 
-    h1 {
+    .advantage-title {
       font-size: 2.3rem;
       color: $blue-bold;
-      margin-bottom: 15px;
+      margin-bottom: 1rem;
     }
 
-    p {
+    .advantage-description {
       font-size: 1rem;
       color: $blue-light;
-    }
-
-    @media all and (max-width: $small) {
-      padding-top: 3rem;
-      padding-bottom: 3rem;
     }
   }
 
   .paid-services {
 
     .service-description {
-      margin-bottom: 5rem;
+      margin-bottom: 8.7rem;
 
       .prices-title {
         font-size: 2.2rem;
         margin-top: 0;
-        margin-bottom: 15px;
+        margin-bottom: 1rem;
         color: $blue-bold;
       }
 
@@ -218,10 +199,6 @@ main {
         margin: 0;
         color: $lilac-lighter;
         font-size: 1rem;
-      }
-
-      @media all and (max-width: $small){
-        margin-bottom: 3rem;
       }
     }
 
@@ -232,7 +209,7 @@ main {
         .item-price {
           font-size: 2.25rem;
           margin-top: 0;
-          margin-bottom: 15px;
+          margin-bottom: 1rem;
           color: $lilac-dark;
         }
 
@@ -240,14 +217,14 @@ main {
           color: black;
           font-size: 1.27rem;
           margin-top: 0;
-          margin-bottom: 10px;
+          margin-bottom: 0.5rem;
         }
 
         .item-description {
           color: $gray-light;
           font-size: 0.87rem;
           margin-top: 0;
-          margin-bottom: 30px;
+          margin-bottom: 1.87rem;
         }
 
         .purchase-item {
@@ -260,15 +237,15 @@ main {
 
 }
 
-footer {
+.footer {
   background: $lilac-light;
 
-  .footer {
-    padding-top: 60px;
-    padding-bottom: 30px;
+  .footer-wrapper {
+    padding-top: 3.8rem;
+    padding-bottom: 2rem;
 
     .site-info {
-      padding-bottom: 35px;
+      padding-bottom: 2.5rem;
       border-bottom: 1px solid $gray-lighter;
 
       .date {
@@ -291,49 +268,111 @@ footer {
           text-align: center;
         }
       }
-
     }
 
     .links {
-      margin-top: 20px;
+      margin-top: 1.25rem;
 
       .navigate-links {
 
-        ul {
+        .link-list {
 
-          li {
+          .navigate-item {
 
-            a {
+            .navigate-link {
               color: $blue-lighter;
               text-decoration: none;
               font-size: 0.9rem;
             }
           }
         }
-
       }
 
       .social-links {
 
-      }
+        .socials-list {
 
-      .navigate-links,
-      .social-links {
+          .social-item {
 
-        ul {
+            .social-link {
 
-          li {
+              .social-image {
 
+              }
+            }
           }
-
         }
       }
     }
   }
 }
 
+@media all and (max-width: $small) {
+  .main-content {
 
+    .introduce {
+      min-height: 50vh;
+    }
+  }
+}
 
+@media all and (max-width: $medium){
+  .main-content {
+
+    .introduce {
+
+      .introduce-part {
+
+        .content-wrapper {
+
+          .content {
+            margin-top: 16rem;
+          }
+        }
+      }
+    }
+
+    .about {
+
+      .additions-advantage {
+        padding-top: 3.8rem;
+        padding-bottom: 4.5rem;
+      }
+    }
+
+    .paid-services {
+
+      .service-description {
+        margin-bottom: 4.35rem;
+      }
+    }
+  }
+}
+
+@media all and (max-width: $large) {
+  .main-content {
+
+    .introduce {
+      min-height: 75vh;
+    }
+  }
+}
+
+@media all and (min-width: $extra-large){
+
+}
+
+@media all and (max-width: $medium) and (min-width: $small){
+
+}
+
+@media all and (max-width: $large) and (min-width: $medium){
+
+}
+
+@media all and (min-width: $large) and (max-width: $extra-large){
+
+}
 
 
 
