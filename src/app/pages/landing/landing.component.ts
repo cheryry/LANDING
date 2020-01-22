@@ -26,7 +26,7 @@ export class LandingComponent implements OnInit {
     fromEvent<Event>(document, 'scroll')
       .pipe(
         takeUntil(this.unsubscribe$),
-        filter(() => document.documentElement.scrollTop === 0 ?
+        filter(() => LandingComponent.documentScrollHeight === 0 ?
           this.checkHeaderScrolledClass : !this.checkHeaderScrolledClass)
       )
       .subscribe(() => this.toggleHeaderScrolled());
@@ -38,5 +38,9 @@ export class LandingComponent implements OnInit {
 
   private get checkHeaderScrolledClass(): boolean {
     return this.header.nativeElement.classList.contains('scrolled');
+  }
+
+  private static get documentScrollHeight(): number {
+    return document.body.scrollTop || document.documentElement.scrollTop;
   }
 }
