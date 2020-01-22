@@ -60,8 +60,8 @@ header {
   }
 
   &.scrolled {
-    background-color: $white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -109,15 +109,15 @@ main {
       }
     }
 
-    @media all and (max-width: 576px){
+    @media all and (max-width: $small) {
       min-height: 50vh;
     }
 
-    @media all and (min-width: 720px){
+    @media all and (min-width: $medium) {
       min-height: 75vh;
     }
 
-    @media all and (min-width: 992px){
+    @media all and (min-width: $large) {
       min-height: 100vh;
     }
   }
@@ -196,17 +196,66 @@ main {
       color: $blue-light;
     }
 
-    @media all and (max-width: 576px){
+    @media all and (max-width: $small) {
       padding-top: 3rem;
       padding-bottom: 3rem;
     }
   }
 
-  .prices {
-    background-image: url(src/assets/images/pricing-background.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    clip-path: polygon(49% 12%, 62% 12%, 75% 10%, 88% 6%, 100% 0, 100% 100%, 0 100%, 0 0, 18% 7%, 33% 10%);
+  .paid-services {
+
+    .service-description {
+      margin-bottom: 5rem;
+
+      .prices-title {
+        font-size: 2.2rem;
+        margin-top: 0;
+        margin-bottom: 15px;
+        color: $blue-bold;
+      }
+
+      .prices-description {
+        margin: 0;
+        color: $lilac-lighter;
+        font-size: 1rem;
+      }
+
+      @media all and (max-width: $small){
+        margin-bottom: 3rem;
+      }
+    }
+
+    .list-prices {
+
+      .price-item {
+
+        .item-price {
+          font-size: 2.25rem;
+          margin-top: 0;
+          margin-bottom: 15px;
+          color: $lilac-dark;
+        }
+
+        .item-title {
+          color: black;
+          font-size: 1.27rem;
+          margin-top: 0;
+          margin-bottom: 10px;
+        }
+
+        .item-description {
+          color: $gray-light;
+          font-size: 0.87rem;
+          margin-top: 0;
+          margin-bottom: 30px;
+        }
+
+        .purchase-item {
+          font-size: 0.8rem;
+          font-weight: normal;
+        }
+      }
+    }
   }
 
 }
@@ -237,7 +286,7 @@ footer {
         .code-text {
           background: $blue-bolder;
           border-radius: 2px;
-          color: $white;
+          color: white;
           font-size: 0.8rem;
           text-align: center;
         }
@@ -270,12 +319,11 @@ footer {
 
       .navigate-links,
       .social-links {
+
         ul {
-          padding: 0;
-          margin: 0;
 
           li {
-            list-style-type: none;
+
           }
 
         }
