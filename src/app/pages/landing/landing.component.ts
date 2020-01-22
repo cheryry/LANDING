@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { fromEvent } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { filter, takeUntil } from 'rxjs/operators';
 import { UnsubscribeService } from '@shared/services/unsubscribe.service';
 
 @Component({
@@ -26,23 +26,14 @@ export class LandingComponent implements OnInit {
     fromEvent<Event>(document, 'scroll')
       .pipe(
         takeUntil(this.unsubscribe$),
+        filter(() => document.documentElement.scrollTop === 0 ?
+          this.checkHeaderScrolledClass : !this.checkHeaderScrolledClass)
       )
       .subscribe(() => this.toggleHeaderScrolled());
   }
 
   private toggleHeaderScrolled(): void {
-    const scrollTop = document.documentElement.scrollTop;
-
-    if(scrollTop === 0) {
-
-      if(this.checkHeaderScrolledClass)
-        this.header.nativeElement.classList.remove('scrolled');
-
-    } else {
-
-      if(!this.checkHeaderScrolledClass)
-        this.header.nativeElement.classList.add('scrolled');
-    }
+    this.header.nativeElement.classList.toggle('scrolled');
   }
 
   private get checkHeaderScrolledClass(): boolean {
