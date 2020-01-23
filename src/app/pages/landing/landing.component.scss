@@ -70,7 +70,6 @@
     background-size: 70% 100%;
     background-position-y: -30px;
     background-position-x: 560px;
-    min-height: 100vh;
 
     .introduce-part {
 
@@ -78,6 +77,7 @@
 
         .content {
           margin-top: 18.93rem;
+          margin-bottom: 10%;
 
           .introduce-text {
             margin-top: 0;
@@ -311,7 +311,16 @@
   .main-content {
 
     .introduce {
-      min-height: 50vh;
+
+      .introduce-part {
+
+        .content-wrapper {
+
+          .content {
+            margin-bottom: 0;
+          }
+        }
+      }
     }
   }
 }
@@ -350,16 +359,16 @@
 }
 
 @media all and (max-width: $large) {
-  .main-content {
 
-    .introduce {
-      min-height: 75vh;
-    }
-  }
 }
 
 @media all and (min-width: $extra-large){
+  .main-content {
 
+    .introduce {
+      min-height: 100vh;
+    }
+  }
 }
 
 @media all and (max-width: $medium) and (min-width: $small){
