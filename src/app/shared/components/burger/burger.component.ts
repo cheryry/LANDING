@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-burger',
@@ -8,16 +8,20 @@ import {ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild} from 
 })
 export class BurgerComponent implements OnInit {
 
-  @ViewChild('burger', {static: true}) burger: ElementRef;
+  @ViewChild('burger', {static: true})
+  private burger: ElementRef;
+
+  @Output()
+  public toggled = new EventEmitter<void>();
 
   constructor() { }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() { }
 
   public toggle(): void {
     this.burger.nativeElement.classList.toggle('open');
+
+    this.toggled.emit();
   }
 
 }

@@ -1,6 +1,6 @@
-import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { fromEvent } from 'rxjs';
-import { filter, takeUntil } from 'rxjs/operators';
+import { filter, takeUntil, tap } from 'rxjs/operators';
 import { UnsubscribeService } from '@shared/services/unsubscribe.service';
 
 @Component({
@@ -17,6 +17,8 @@ export class LandingComponent implements OnInit {
 
   @ViewChild('header', {static: true})
   private header: ElementRef;
+  @ViewChild('dropMenu', {static: true})
+  private dropMenu: ElementRef;
 
   constructor(private unsubscribe$: UnsubscribeService) {
     this.currentDate = new Date();
@@ -26,21 +28,35 @@ export class LandingComponent implements OnInit {
     fromEvent<Event>(document, 'scroll')
       .pipe(
         takeUntil(this.unsubscribe$),
-        filter(() => LandingComponent.documentScrollHeight === 0 ?
-          this.checkHeaderScrolledClass : !this.checkHeaderScrolledClass)
+        tap(() => {
+          if(this.checkDropMenuActiveClass) return;
+
+          LandingComponent.documentScrollHeight === 0 ?
+            this.removeScrolledClass() : this.addScrolledClass();
+          }),
       )
-      .subscribe(() => this.toggleHeaderScrolled());
-  }
-
-  private toggleHeaderScrolled(): void {
-    this.header.nativeElement.classList.toggle('scrolled');
-  }
-
-  private get checkHeaderScrolledClass(): boolean {
-    return this.header.nativeElement.classList.contains('scrolled');
+      .subscribe();
   }
 
   private static get documentScrollHeight(): number {
     return document.body.scrollTop || document.documentElement.scrollTop;
+  }
+
+  private addScrolledClass(): void {
+    this.header.nativeElement.classList.add('header-background');
+  }
+
+  private removeScrolledClass(): void {
+    this.header.nativeElement.classList.remove('header-background');
+  }
+
+  private get checkDropMenuActiveClass(): boolean {
+    return this.dropMenu.nativeElement.classList.contains('active');
+  }
+
+  public toggleDropMenu(): void {
+    this.addScrolledClass();
+
+    this.dropMenu.nativeElement.classList.toggle('active');
   }
 }

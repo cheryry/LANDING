@@ -1,22 +1,14 @@
+<nav #dropMenu class="drop-down-menu w-100">
+  <ul class="links-list list-normalize d-flex flex-column">
+    <ng-container *ngTemplateOutlet="navItems"></ng-container>
+  </ul>
+</nav>
+
 <header class="header" #header>
   <div class="container d-flex header-wrapper align-items-center justify-content-between">
     <nav class="links d-sm-block d-none col-5">
-      <ul class="link-list d-flex">
-        <li class="link-item">
-          <a class="link" href="">
-            Home
-          </a>
-        </li>
-        <li class="link-item">
-          <a class="link" href="">
-            About
-          </a>
-        </li>
-        <li class="link-item">
-          <a class="link" href="">
-            Contact
-          </a>
-        </li>
+      <ul class="link-list d-flex list-normalize">
+        <ng-container *ngTemplateOutlet="navItems"></ng-container>
       </ul>
     </nav>
 
@@ -28,7 +20,7 @@
       <button class="buy-button button fluid d-sm-block d-none pr-5 pl-5 pt-1 pb-1">
         Buy Now
       </button>
-      <app-burger class="menu-trigger d-sm-none d-flex"></app-burger>
+      <app-burger class="menu-trigger d-sm-none d-flex" (toggled)="toggleDropMenu()"></app-burger>
     </div>
   </div>
 </header>
@@ -274,3 +266,21 @@
     </div>
   </div>
 </footer>
+
+<ng-template #navItems>
+  <li class="link-item">
+    <a class="link" href="">
+      Home
+    </a>
+  </li>
+  <li class="link-item">
+    <a class="link" href="">
+      About
+    </a>
+  </li>
+  <li class="link-item">
+    <a class="link" href="">
+      Contact
+    </a>
+  </li>
+</ng-template>
