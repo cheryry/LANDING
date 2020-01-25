@@ -12,7 +12,7 @@ export class BurgerComponent implements OnInit {
   private burger: ElementRef;
 
   @Output()
-  public toggled = new EventEmitter<void>();
+  public toggled = new EventEmitter<boolean>();
 
   constructor() { }
 
@@ -21,7 +21,13 @@ export class BurgerComponent implements OnInit {
   public toggle(): void {
     this.burger.nativeElement.classList.toggle('open');
 
-    this.toggled.emit();
+    this.emitToggleState();
+  }
+
+  private emitToggleState(): void {
+    const state = this.burger.nativeElement.classList.contains('open');
+
+    this.toggled.emit(state);
   }
 
 }

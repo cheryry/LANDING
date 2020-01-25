@@ -20,7 +20,8 @@ export class LandingComponent implements OnInit {
   @ViewChild('dropMenu', {static: true})
   private dropMenu: ElementRef;
 
-  constructor(private unsubscribe$: UnsubscribeService) {
+  constructor(private unsubscribe$: UnsubscribeService,
+              private renderer: Renderer2) {
     this.currentDate = new Date();
   }
 
@@ -29,8 +30,6 @@ export class LandingComponent implements OnInit {
       .pipe(
         takeUntil(this.unsubscribe$),
         tap(() => {
-          if(this.checkDropMenuActiveClass) return;
-
           LandingComponent.documentScrollHeight === 0 ?
             this.removeScrolledClass() : this.addScrolledClass();
           }),
@@ -50,13 +49,19 @@ export class LandingComponent implements OnInit {
     this.header.nativeElement.classList.remove('header-background');
   }
 
-  private get checkDropMenuActiveClass(): boolean {
-    return this.dropMenu.nativeElement.classList.contains('active');
-  }
-
-  public toggleDropMenu(): void {
+  public toggleDropMenu(state): void {
     this.addScrolledClass();
 
-    this.dropMenu.nativeElement.classList.toggle('active');
+    state ? this.showDropDownMenu() : this.hideDropDownMenu();
+  }
+
+  private showDropDownMenu(): void {
+    const headerHeight = this.header.nativeElement.clientHeight;
+
+    this.renderer.setStyle(this.dropMenu.nativeElement, 'transform', `translateY(${headerHeight}px)`)
+  }
+
+  private hideDropDownMenu(): void {
+    this.renderer.setStyle(this.dropMenu.nativeElement, 'transform', `translateY(-100%)`)
   }
 }
